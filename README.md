@@ -39,7 +39,8 @@ void main() {
     await tester.pumpAndSettle();
 
     // 10.0.2.2 is not a random number --- it's the IP address of the host machine for an android emulator.
-    final screenshotManager = ScreenshotManager(host: "10.0.2.2", port: 3824);
+    // The base path passed can !optionally! be set to place screenshots in a different directory than the default `screenshots/`
+    final screenshotManager = ScreenshotManager(host: "10.0.2.2", port: 3824, basePath: "images/screenshots/generated");
 
     await screenshotManager.pumpAndScreenshot(
       "home_screen_default",

@@ -1,6 +1,6 @@
 name: tief_screen
 description: Screenshot taking and management library for Flutter integration tests.
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/Tiefseetauchner/tief_screen
 
 environment:

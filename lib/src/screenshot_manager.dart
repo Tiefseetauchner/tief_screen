@@ -6,8 +6,13 @@ import 'package:integration_test/integration_test.dart';
 class ScreenshotManager {
   int port;
   final String host;
+  final String basePath;
 
-  ScreenshotManager({required this.port, required this.host}) {
+  ScreenshotManager({
+    required this.port,
+    required this.host,
+    this.basePath = "screenshots",
+  }) {
     _client = HttpClient();
   }
 
@@ -50,7 +55,7 @@ class ScreenshotManager {
           final request = await _client.post(
             host,
             port,
-            "screenshots/$sanetizedNamespace/$screenshotName.png",
+            "$basePath/$sanetizedNamespace/$screenshotName.png",
           );
           request
             ..contentLength = screenshotBytes.length

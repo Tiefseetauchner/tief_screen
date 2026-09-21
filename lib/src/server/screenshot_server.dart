@@ -18,7 +18,7 @@ Future<void> runScreenshotServer({int port = 3824}) async {
     } else if (request.method == 'POST' &&
         request.uri.path.startsWith('/screenshots/') &&
         !request.uri.pathSegments.contains('..')) {
-      final screenshotPath = request.uri.pathSegments.join('/');
+      final screenshotPath = request.uri.pathSegments.skip(1).join('/');
       final file = File(screenshotPath);
 
       await file.create(recursive: true);

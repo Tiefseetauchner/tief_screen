@@ -55,7 +55,7 @@ class ScreenshotManager {
           final request = await _client.post(
             host,
             port,
-            "$basePath/$sanetizedNamespace/$screenshotName.png",
+            "screenshots/$basePath/$sanetizedNamespace/$screenshotName.png",
           );
           request
             ..contentLength = screenshotBytes.length
